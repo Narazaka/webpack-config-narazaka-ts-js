@@ -1,4 +1,5 @@
 const webpack = require("webpack");
+const path = require("path");
 
 module.exports = {
   module: {
@@ -39,7 +40,7 @@ module.exports = {
     },
   },
   output: {
-    path:          __dirname,
+    path:          path.resolve("."),
     filename:      "dist/lib/[name].js",
     library:       null,
     libraryTarget: "commonjs2",
