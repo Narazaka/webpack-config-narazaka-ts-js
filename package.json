@@ -1,0 +1,28 @@
+{
+  "name": "webpack-config-narazaka-ts-js",
+  "version": "0.0.1",
+  "description": "a shared webpack config",
+  "keywords": [],
+  "main": "./index.js",
+  "scripts": {
+    "lint": "eslint *.js src test"
+  },
+  "dependencies": {
+    "webpack": ">= 1.13.3"
+  },
+  "peerDependencies": {
+    "browserfs": ">= 1.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.0",
+    "eslint": "^3.9.1",
+    "eslint-config-narazaka": "^1.0.1"
+  },
+  "url": "https://github.com/Narazaka/webpack-config-narazaka-ts-js",
+  "author": "Narazaka",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Narazaka/webpack-config-narazaka-ts-js.git"
+  }
+}
