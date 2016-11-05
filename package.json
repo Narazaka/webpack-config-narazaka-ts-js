@@ -11,6 +11,7 @@
     "lint": "eslint *.js src test"
   },
   "dependencies": {
+    "clone": "^2.0.0",
     "webpack": ">= 1.13.3"
   },
   "peerDependencies": {

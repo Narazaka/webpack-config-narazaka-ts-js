@@ -1,5 +1,6 @@
 const webpack = require("webpack");
-const config = require("./webpack.config.node.base");
+const clone = require("clone");
+const config = clone(require("./webpack.config.node.base"));
 
 config.target = "web";
 config.output.filename = "web/lib/[name].js";

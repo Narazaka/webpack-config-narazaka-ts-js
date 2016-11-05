@@ -1,4 +1,5 @@
-const config = require("./webpack.config.web.base");
+const clone = require("clone");
+const config = clone(require("./webpack.config.web.base"));
 const path = require("path");
 
 if (!config.module.postLoaders) config.module.postLoaders = [];
