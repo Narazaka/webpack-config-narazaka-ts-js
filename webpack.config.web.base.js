@@ -5,6 +5,7 @@ const config = clone(require("./webpack.config.node.base"));
 config.target = "web";
 config.output.filename = "web/lib/[name].js";
 config.output.libraryTarget = "umd";
+delete config.externals;
 
 config.plugins.push(
   new webpack.ProvidePlugin({

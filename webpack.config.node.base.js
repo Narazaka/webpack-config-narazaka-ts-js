@@ -49,7 +49,7 @@ module.exports = {
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
   ],
-  devtool: "source-map",
-  resolve: {extensions: ["", ".ts", ".js"]},
+  devtool:   "source-map",
+  resolve:   {extensions: ["", ".ts", ".js"]},
   externals: /^(?!^\.\/)/,
 };
