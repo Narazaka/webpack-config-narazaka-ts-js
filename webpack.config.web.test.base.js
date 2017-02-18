@@ -9,8 +9,8 @@ config.module.postLoaders.push({
   loader:  "istanbul-instrumenter",
 });
 config.devtool = "inline-source-map";
-config.ts.compilerOptions.sourceMap = false;
-config.ts.compilerOptions.inlineSourceMap = true;
+config.module.rules[3].use[1].options.compilerOptions.sourceMap = false;
+config.module.rules[3].use[1].options.compilerOptions.inlineSourceMap = true;
 delete config.entry;
 
 module.exports = config;

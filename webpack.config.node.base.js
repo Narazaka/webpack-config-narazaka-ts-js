@@ -3,42 +3,43 @@ const path = require("path");
 
 module.exports = {
   module: {
-    preLoaders: [
+    rules: [
       {
+        enforce: "pre",
         test:   /\.js$/,
-        loader: "eslint",
+        loader: ["eslint-loader"],
       },
       {
+        enforce: "pre",
         test:   /\.ts$/,
-        loader: "tslint",
+        use: ["tslint-loader"],
       },
-    ],
-    loaders: [
       {
         test:    /\.js$/,
-        loader:  "babel",
+        use: ["babel-loader"],
         exclude: /node_modules/,
       },
       {
         test:    /\.ts$/,
-        loader:  "babel!ts",
+        use: [
+          "babel-loader",
+          {
+            loader: "ts-loader",
+            options:     {
+              compilerOptions: {
+                rootDir:        "src",
+                outDir:         "dist",
+                declarationDir: "dist",
+              },
+            },
+          },
+        ],
         exclude: /node_modules/,
-      },
-      {
-        test:   /\.json$/,
-        loader: "json",
       },
     ],
   },
   target: "node",
   entry:  {},
-  ts:     {
-    compilerOptions: {
-      rootDir:        "src",
-      outDir:         "dist",
-      declarationDir: "dist",
-    },
-  },
   output: {
     path:          path.resolve("."),
     filename:      "dist/lib/[name].js",
@@ -50,6 +51,6 @@ module.exports = {
     new webpack.optimize.AggressiveMergingPlugin(),
   ],
   devtool:   "source-map",
-  resolve:   {extensions: ["", ".ts", ".js"]},
+  resolve:   {extensions: [".ts", ".js"]},
   externals: /^(?!^\.\/)/,
 };
